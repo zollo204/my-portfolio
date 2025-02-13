@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY-Portfolio</title>
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <h1 class="glowing-name">Solomon</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Section -->
+    <section class="intro-section">
+        <div class="intro-text">
+            <h2 class="glowing-hi">Hi, I'm Solomon</h2>
+            <p>
+                A committed and driven Actuarial Science graduate with a love for programming and strong analytical abilities. 
+                Proficient in Python, R, SPSS, Stata, HTML, CSS, and JavaScript.
+            </p>
+        </div>
+        <div class="profile-container">
+            <div class="glow-circle">
+                <img src="profile.png" alt="Profile Picture">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; <span id="year"></span> Solomon2025. All rights reserved.</p>
+    </footer>
+
+    <!-- About Modal -->
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>About Me</h2>
+            <hr>
+            <p>Hello! I'm Solomon, an Actuarial Science graduate with a passion for programming and data analysis. 
+            I enjoy solving complex problems and am proficient in Python, R, SPSS, Stata, HTML, CSS, and JavaScript. 
+            Apart from coding, I love traveling, designing tags and IDs, and playing board games.</p>
+        </div>
+    </div>
+
+    <!-- Skills Modal -->
+    <div id="skillsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Skills</h2>
+            <hr>
+            <ul>
+                <li>Python, R, SPSS, Stata</li>
+                <li>HTML, CSS, JavaScript</li>
+                <li>Data Analysis & Visualization</li>
+                <li>Problem Solving & Critical Thinking</li>
+                <li>Tiles Fitting</li>
+                <li>Painting</li>
+                <li>Electical Installations</li>
+
+            </ul>
+        </div>
+    </div>
+
+    <!-- Education Modal -->
+    <div id="educationModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Education</h2>
+            <hr>
+            <p>Bachelor of Actuarial Science - South Eastern Kenya University<br></p>
+            <p>Floor Tiling Grade 3 - Kirwara Vocational Training Center<br></p>
+            <p>Electrical Grade 3- Kirwara Vocational Training Center<br></p>
+            <p>Electrical Grade 2- Kirwara Vocational Training Center<br></p>
+            <p>Painting Grade 3- Kirwara Vocational Training Center<br></p>
+            <p>HTML - Codeliber<br></p>
+            <p>CSS - Codeliber<br></p>
+            <p>PYTHON - Codeliber<br></p>
+            <p>STATA<br></p>
+            <p>R<br></p>
+            <p>SPSS<br></p>
+
+            
+            
+            
+        </div>
+    </div>
+
+    <!-- Projects Modal -->
+    <div id="projectsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Projects</h2>
+            <hr>
+            <ul>
+                <li>Tkinter Application Development</li>
+                <li>Quiz Game Development</li>
+                <li>Restraunt Menu Development</li>
+                <li>School Management System Development</li>
+                <li>Date And Time App Development</li>
+                <li>Data Analysis Projects using Python and R</li>
+                <li>Personal Portfolio Website using HTML and CSS</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Contact Me</h2>
+            <hr>
+            <p>Email: <a href="">solomonmwenda1999@gmail.com </a><br></p>
+            <p>Phone No: 0757203663</p>
+        </div>
+    </div>
+<script>
+    // Function to handle modals
+function handleModal(linkSelector, modalId) {
+    var modal = document.getElementById(modalId);
+    var link = document.querySelector(linkSelector);
+    var closeBtn = modal.querySelector(".close-btn");
+
+    link.addEventListener("click", function(event) {
+        event.preventDefault();
+        modal.style.display = "block";
+        
+        // Restart animations for h2 and hr
+        var heading = modal.querySelector("h2");
+        var line = modal.querySelector("hr");
+        
+        heading.style.animation = "none";
+        line.style.animation = "none";
+        
+        setTimeout(() => {
+            heading.style.animation = "";
+            line.style.animation = "";
+        }, 10);
+    });
+
+    closeBtn.addEventListener("click", function() {
+        modal.style.display = "none";
+    });
+
+    window.addEventListener("click", function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+}
+
+// Initialize all modals
+handleModal("a[href='#about']", "aboutModal");
+handleModal("a[href='#skills']", "skillsModal");
+handleModal("a[href='#education']", "educationModal");
+handleModal("a[href='#projects']", "projectsModal");
+handleModal("a[href='#contact']", "contactModal");
+</script>
+</body>
+</html>
+
+
+
